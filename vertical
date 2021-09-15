@@ -1,0 +1,5 @@
+#! /bin/sh
+clear
+convert "$1" -pointsize 160 -font "Noto-Serif-CJK-JP" -fill white -draw 'text 256, 256 "© OrzBruford"' -resize 1024x -unsharp 1.5x1+0.7+0.02 -quality 97 "$2"
+# convert "$1" -resize x4096 -unsharp 1.5x1+0.7+0.02 -quality 97 "$2"
+

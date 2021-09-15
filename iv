@@ -1,0 +1,3 @@
+#! /bin/sh
+instaSquareTate "$1" "/home/mitsugu/Downloads/i$1"
+

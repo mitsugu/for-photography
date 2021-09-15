@@ -1,0 +1,32 @@
+#! /bin/sh
+#
+# Usage :
+#   wm filename location
+#
+#     filename : file Name
+#     location : Location to display Exif data
+#                Specify the argument of ImageMagick's gravity option.
+#                NorthWest, North, NorthEast, East, SouthEast, South, SouthWest
+#
+date=`exiftool -s -DateTimeOriginal -T $1`
+make=`exiftool -s -Make -T $1`
+camera=`exiftool -s -Model -T $1`
+lens=`exiftool -s -LensModel -T $1`
+iso=`exiftool -s -ISO -T $1`
+fnumber=`exiftool -s -FNumber -T $1`
+ss=`exiftool -s -ShutterSpeed -T $1`
+font=Helvetica
+#font=./Mplus2-Light.ttf
+
+convert -font $font \
+  -size 304x144 \
+  -splice 8x \
+  -fill "#FFFFFF" \
+  -background none \
+  -pointsize 14 \
+  label:"\nCopyright : Mitsugu Oyama \( OrzBruford \)\nDate and Time : $date\nMaker : $make\nCamera : $camera\nLens : $lens\nISO : $iso\nF Number : $fnumber\nShutter Speed : $ss" \
+  hoge.png
+
+convert "$1" hoge.png -gravity "$2" -compose over -composite "$1.jpg"
+rm hoge.png
+

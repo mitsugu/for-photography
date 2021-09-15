@@ -1,0 +1,17 @@
+#! /bin/sh
+no=$#
+if [ $no -eq 5 ]
+then
+  tmp=`echo $2 | awk '$0 = substr($0, 0, length($0)-3)'`
+  waifu2x-converter-cpp -m scale --scale-ratio "$1" -p 1 -q 100 -i "$2" -o "$3/$tmp$4.$5"
+else
+  if [ $no -eq 6 ]
+  then
+    tmp=`echo $3 | awk '$0 = substr($0, 0, length($0)-3)'`
+    waifu2x-converter-cpp -m noise-scale --scale-ratio $1 \
+                          --noise-level $2 -p 1 -q 100 -i "$3" -o "$4/$tmp$5.$6"
+  else
+    echo "Usage : upsamp scale-ratio noise-level input-file-name output-directory output-file-name extension"
+  fi
+fi
+

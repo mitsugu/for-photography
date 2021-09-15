@@ -1,0 +1,2 @@
+#! /bin/sh
+exiftool -LensMake="Asahi Optical Co., Ltd." -LensModel="smc PENTAX-A 1:1.7 50mm" "$1"

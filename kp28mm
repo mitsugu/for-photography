@@ -1,0 +1,3 @@
+#! /bin/sh
+exiftool -LensMake="Asahi Optical Co., Ltd." -LensModel="smc PENTAX-M 1:2.8 28mm" -FNumber="$1" "$2"
+

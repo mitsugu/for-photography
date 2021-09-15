@@ -1,0 +1,3 @@
+#! /bin/sh
+exiftool -tagsfromfile "$1" -makernotes -AmbientTemperature "$2"
+

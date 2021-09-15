@@ -1,0 +1,3 @@
+#! /bin/sh
+exiftool -Make="FUJIFILM Co., Ltd." -Model="QuickSnap Sinple Ace" -LensMake="FUJIFILM Co., Ltd." -LensModel="Plastic Lens" -FocalLength="32" -FocalLengthIn35mmFormat="32" -Artist="mitsugu oyama" -Copyright="copyright (c) $1 mitsugu oyama All Rights Reserved."  -CreateDate="$2" -DateTimeOriginal="$2" -FNumber="10" -ExposureTime="1/140" -ISO="400" -UserComment="$3" "$4"
+

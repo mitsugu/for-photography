@@ -1,0 +1,4 @@
+#! /bin/sh
+clear
+convert "$1" -resize "$2x$3" -unsharp 1.5x1+0.7+0.02 -quality 97 "/home/mitsugu/Downloads/$1"
+# convert "$1" -font "Lohit-Devanagari" -pointsize 256 -fill white -draw 'text 382,382 "© नमस्ते"' -font "Noto-Serif-CJK-JP" -draw 'text 1240, 382 "生捨ナマステ"' -resize 1024x -unsharp 1.5x1+0.7+0.02 -quality 95 "$2"

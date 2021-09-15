@@ -1,0 +1,3 @@
+#! /bin/sh
+convert "$1" -background black -gravity center -extent 1080x1080 "i$1"
+

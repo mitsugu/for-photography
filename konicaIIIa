@@ -1,0 +1,3 @@
+#! /bin/sh
+exiftool -all= "$8"
+exiftool -Make="Konishiroku Photo Industry Co., Ltd." -Model="Konica IIIA" -LensMake="Konishiroku Photo Industry Co., Ltd." -LensModel="Konishiroku Hexanon 1:1.8 50mm" -FocalLength=50 -FocalLengthIn35mmFormat=50 -Artist="mitsugu oyama" -Copyright="Copyright (c) $1 mitsugu oyama All Rights Reserved."  -CreateDate="$2" -DateTimeOriginal="$2" -FNumber="$3" -ExposureTime="$4" -ISO="$5" -UserComment="EV=$6 $7" "$8"

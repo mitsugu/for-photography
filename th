@@ -1,0 +1,3 @@
+#! /bin/sh
+twitterH "$1" "/home/mitsugu/Downloads/t$1"
+

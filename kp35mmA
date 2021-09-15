@@ -1,0 +1,3 @@
+#! /bin/sh
+exiftool -LensMake="RICOH IMAGING COMPANY, LTD." -LensModel="HD PENTAX-FA 35mm F2" "$1"
+

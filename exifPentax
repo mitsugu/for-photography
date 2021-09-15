@@ -1,0 +1,3 @@
+#! /bin/sh
+exiftool -Make="Pentax Corporation" "$1"
+

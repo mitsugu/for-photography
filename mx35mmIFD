@@ -1,0 +1,4 @@
+#! /bin/sh
+exiftool -all= "$5"
+exiftool -Make="Asahi Optical Co., Ltd." -Model="PENTAX MX" -LensMake="RICOH IMAGING COMPANY, LTD." -LensModel="HD PENTAX-FA 35mm F2" -FocalLength=35 -FocalLengthIn35mmFormat=35 -Artist="mitsugu oyama" -Copyright="Copyright (c) $1 mitsugu oyama All Rights Reserved." -CreateDate="$2" -DateTimeOriginal="$2" -ISO="$3" -UserComment="$4 I forgot to record time, shutter speed and aperture." "$5"
+
