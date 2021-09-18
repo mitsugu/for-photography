@@ -8,23 +8,27 @@
 #                Specify the argument of ImageMagick's gravity option.
 #                NorthWest, North, NorthEast, East, SouthEast, South, SouthWest
 #
+copyright="Mitsugu Oyama \( OrzBruford \)"
 date=`exiftool -s -DateTimeOriginal -T $1`
 make=`exiftool -s -Make -T $1`
 camera=`exiftool -s -Model -T $1`
+#lens=`exiftool -s -LensID -T $1`
 lens=`exiftool -s -LensModel -T $1`
 iso=`exiftool -s -ISO -T $1`
 fnumber=`exiftool -s -FNumber -T $1`
 ss=`exiftool -s -ShutterSpeed -T $1`
+soft=`exiftool -s -Software -T $1`
+size="304x136"
 font=Helvetica
 #font=./Mplus2-Light.ttf
 
 convert -font $font \
-  -size 304x144 \
+  -size "$size" \
   -splice 8x \
   -fill "#FFFFFF" \
   -background none \
   -pointsize 14 \
-  label:"\nCopyright : Mitsugu Oyama \( OrzBruford \)\nDate and Time : $date\nMaker : $make\nCamera : $camera\nLens : $lens\nISO : $iso\nF Number : $fnumber\nShutter Speed : $ss" \
+  label:"\nCopyright : $copyright\nDate and Time : $date\nMaker : $make\nCamera : $camera\nLens : $lens\nISO : $iso\nF Number : $fnumber\nShutter Speed : $ss\nSoftware : $soft" \
   hoge.png
 
 convert "$1" hoge.png -gravity "$2" -compose over -composite "$1.jpg"
