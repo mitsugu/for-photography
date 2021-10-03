@@ -1,4 +1,0 @@
-#! /bin/sh
-exiftool -all= "$8"
-exiftool -Make="Asahi Optical Co., Ltd." -Model="PENTAX MX" -LensMake="Asahi Optical Co., Ltd." -LensModel="$1" -FocalLength="$2" -FocalLengthIn35mmFormat="$2" -Artist="mitsugu oyama" -Copyright="Copyright (c) $3 mitsugu oyama All Rights Reserved."  -CreateDate="$4" -DateTimeOriginal="$4" -FNumber="$5" -ISO="$6" -UserComment="$7" -ExposureTime= "$8"
-

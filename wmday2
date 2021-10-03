@@ -8,64 +8,38 @@
 #                Specify the argument of ImageMagick's gravity option.
 #                NorthWest, North, NorthEast, East, SouthEast, South, SouthWest
 #
-copyright="Mitsugu Oyama \( OrzBruford \)"
-#copyright="OrzBruford"
+copyright="Mitsugu Oyama"
+title="$3"
 date=`exiftool -s -DateTimeOriginal -T $1`
 make=`exiftool -s -Make -T $1`
 camera=`exiftool -s -Model -T $1`
-lens=`exiftool -s -LensID -T $1`
-#lens=`exiftool -s -LensModel -T $1`
+#lens=`exiftool -s -LensID -T $1`
+lens=`exiftool -s -LensModel -T $1`
 iso=`exiftool -s -ISO -T $1`
 fnumber=`exiftool -s -FNumber -T $1`
 ss=`exiftool -s -ShutterSpeed -T $1`
 soft=`exiftool -s -Software -T $1`
 font=Helvetica
-#size="336x128"
-#fontsize=12
-
-# OLYMPUS CAMEDIA C300 ZOOM
-size="304x168"
-fontsize=16
-splice=16x16
-
-## CAMEDIA
-#size="512x96"
-#fontsize=40
-
-## KYOCERA URBANO
-#size="1024x224"
-#fontsize=80
 
 ## Huawei
-#size="872x192"
-#fontsize=80
-
-## Pixel5
-#size="896x192"
-#fontsize=80
-
-## PENTAX MX
-#size="256x128"
-#fontsize=8
-#splice=4x4
+#size="1280x768"
+#fontsize=64
 
 ## PENTAX *ist DL2
-#size="1024x192"
-#fontsize=64
-#splice=32x64
+#size="840x576"
+#fontsize=48
 
 ## PENTAX KP
-#size="1640x384"
-#fontsize=128
-
+size="1280x702"
+fontsize=63
 
 convert -font $font \
   -size "$size" \
-  -splice "$splice" \
-  -fill "#770000" \
+  -splice 32x \
+  -fill "#FFFFFF" \
   -background none \
   -pointsize "$fontsize" \
-  label:"\nCopyright : $copyright\nDate and Time : $date\nMaker : $make\nCamera : $camera\nLens : $lens\nISO : $iso\nF Number : $fnumber\nShutter Speed : $ss\nSoftware : $soft" \
+  label:"\nCopyright : $copyright\nTitle : ${title}\nDate and Time : $date\nMaker : $make\nCamera : $camera\nLens : $lens\nISO : $iso\nF Number : $fnumber\nShutter Speed : $ss\nSoftware : $soft" \
   hoge.png
 
 convert "$1" hoge.png -gravity "$2" -compose over -composite "$1.jpg"

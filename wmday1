@@ -1,0 +1,60 @@
+#! /bin/sh
+#
+# Usage :
+#   wm filename location
+#
+#     filename : file Name
+#     location : Location to display Exif data
+#                Specify the argument of ImageMagick's gravity option.
+#                NorthWest, North, NorthEast, East, SouthEast, South, SouthWest
+#
+copyright="Mitsugu Oyama"
+title="$3"
+#font="/home/mitsugu/.font/shirasagi.otf"
+#font="/home/mitsugu/.font/azuki.ttf"
+#font="/home/mitsugu/.font/851MkPOP_100.ttf"
+font="/home/mitsugu/.font/Mikachan-PB.ttf"
+
+## CAMEDIA
+#size="512x96"
+#fontsize=40
+
+## KYOCERA URBANO
+#size="1024x224"
+#fontsize=80
+
+## Huawei
+#size="872x192"
+#fontsize=80
+
+## Pixel5
+#size="896x192"
+#fontsize=80
+
+## PENTAX MX
+size="256x40"
+fontsize=16
+splice=4x4
+
+## PENTAX *ist DL2
+#size="1024x192"
+#fontsize=64
+#splice=32x64
+
+## PENTAX KP
+#size="1640x384"
+#fontsize=128
+
+convert \
+  -font "$font" \
+  -size "$size" \
+  -splice "$splice" \
+  -fill "#FFFFFF" \
+  -background none \
+  -pointsize "$fontsize" \
+  label:"Copyright : ${copyright}\nTitle : ${title}" \
+  hoge.png
+
+convert "$1" hoge.png -gravity "$2" -compose over -composite "$1.jpg"
+rm hoge.png
+
